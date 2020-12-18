@@ -1,0 +1,6 @@
+node_modules/
+es6/
+cjs/
+coverage/
+/*js
+/*.d.ts

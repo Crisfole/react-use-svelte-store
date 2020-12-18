@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext", // Override in tsconfig.cjs.json
+        "esModuleInterop": false, // Override in tsconfig.cjs.json
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "strict": true,
+        "experimentalDecorators": false,
+        "emitDecoratorMetadata": false,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "es6", // Override in tsconfig.cjs.json
+        "declaration": true,
+        "lib": [
+            "DOM",
+            "ESNext",
+            "DOM.Iterable"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "compileOnSave": true
+}

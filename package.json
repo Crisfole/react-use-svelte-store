@@ -1,0 +1,44 @@
+{
+  "name": "react-use-svelte-store",
+  "version": "1.0.0",
+  "description": "Consume svelte-stores from react, with hooks",
+  "main": "cjs/index.js",
+  "module": "es6/index.js",
+  "files": [
+    "cjs",
+    "es6",
+    "src"
+  ],
+  "scripts": {
+    "clean:esm": "rm -rf esm",
+    "clean:cjs": "rm -rf cjs",
+    "clean": "run-p clean:*",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "run-p build:*",
+    "dev:esm": "tsc -w",
+    "dev:cjs": "tsc -w --project tsconfig.cjs.json",
+    "dev": "run-p dev:*",
+    "prepare": "run-s clean build",
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags && npm publish --access=public"
+  },
+  "keywords": [
+    "react",
+    "svelte",
+    "svelte-store"
+  ],
+  "author": "Christopher Pfohl",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "npm-run-all": "^4.1.5",
+    "react": ">=16.8",
+    "svelte": ">=2",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "svelte": ">=2",
+    "react": ">=16.8"
+  }
+}
