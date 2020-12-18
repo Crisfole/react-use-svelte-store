@@ -20,7 +20,6 @@
     "dev:cjs": "tsc -w --project tsconfig.cjs.json",
     "dev": "run-p dev:*",
     "prepare": "run-s clean build",
-    "preversion": "npm run test",
     "postversion": "git push && git push --tags && npm publish --access=public"
   },
   "keywords": [
