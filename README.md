@@ -19,7 +19,7 @@ I'm assuming you have react installed. If not, well, figuring that out is on you
  3. Create a svelte store: `export const foos = writable<Foo[]>([]);`
  4. Use the store in a component: `const $foos = useReadable(foos);`
 
-I recommend keeping the svelte convention of 'derefencing' the store value into a variable prefixed with `$`. It reminds you to pause and think.
+I recommend keeping the svelte convention of 'dereferencing' the store value into a variable prefixed with `$`. It reminds you to pause and think.
 
 ## Docs
 
