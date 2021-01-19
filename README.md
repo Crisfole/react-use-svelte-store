@@ -1,29 +1,26 @@
 # react-use-svelte-store
 
-I like [Svelte](svelte.dev). You should too. Sometimes, though, I have to use [React](reactjs.com) for legacy projects or becuase it's what my clients want.
+I like [Svelte](svelte.dev). You should too. Sometimes, though, I have to use [React](reactjs.com) for legacy projects or because it's what my clients want.
 
 When I do have to use React, I really miss the state management built in with [Svelte](svelte.dev). The stores are beautifully simple and easy to comprehend. Updating them requires no redux action, no complex reducers, no higher order components that feed the component with the content of the stores.
 
 React hooks enable behavior that's _really_ similar to Svelte's reactive assignments. Sharing global state in react _should_ be as easy as importing the state-containing store, and should _not_ require Context providers and consumers, redux reducers, higher order components, or any other such hacks. This package merges the two.
 
-## Bundle Size?
-
-Don't worry. Only a small portion of svelte is actually runtime. `svelte/store` is part of that runtime. If you're using [Rollup](https://rollupjs.org) or [Webpack](https://webpack.js.org) properly it will treeshake the code and your bundle size will only increase by the size of the imported functions from 'svelte/store'.
-
 ## How do I get started?
 
 I'm assuming you have react installed. If not, well, figuring that out is on you.
 
- 1. `npm install svelte react-use-svelte-store`
+ 1. `npm install react-use-svelte-store`
  2. Create a file `stores.ts`.
  3. Create a svelte store: `export const foos = writable<Foo[]>([]);`
- 4. Use the store in a component: `const $foos = useReadable(foos);`
+ 4. Consume the store in a component: `const $foos = useReadable(foos);`
+ 5. Update the store in a component: `foos.update(f => f.concat(new Foo()))`
 
 I recommend keeping the svelte convention of 'dereferencing' the store value into a variable prefixed with `$`. It reminds you to pause and think.
 
 ## Docs
 
-The package exports two hooks: `useReadable` and `useWritable`. These hooks are designed to at least nominally mimic the `useState` hooks.
+The package exports two hooks: `useReadable` and `useWritable`. The hooks are designed to mimic the `useState` hooks, returning the value and a setter. It also re-exports the core svelte stores so you don't have to include svelte as a dependency. Full documentation for the svelte stores can be found [here](https://svelte.dev/docs#svelte_store).
 
 ### useReadable
 
@@ -95,3 +92,31 @@ export const MyList = () => {
     );
 };
 ```
+
+### writable
+
+| :information_source: Re-export from Svelte, for full documentation follow link. |
+|:--------------------------------|
+
+[`writable`](https://svelte.dev/docs#writable) creates a store that can be set, updated, and subscribed to externally.
+
+### readable
+
+| :information_source: Re-export from Svelte, for full documentation follow link. |
+|:--------------------------------|
+
+[`readable`](https://svelte.dev/docs#readable) creates a store that cannot be updated externally, the function it receives as its parameter is the only place in code that can alter the contents of the store.
+
+### derived
+
+| :information_source: Re-export from Svelte, for full documentation follow link. |
+|:--------------------------------|
+
+[`derived`](https://svelte.dev/docs#derived) creates a store based on the content of one or more other stores. It cannot be updated externally except by updating its 'upstream' stores.
+
+### get
+
+| :information_source: Re-export from Svelte, for full documentation follow link. |
+|:--------------------------------|
+
+[`get`](https://svelte.dev/docs#get) is an inefficient way to get the value out of a store in a one off fashion. Using it in the body of your component is probably a mistake. Using it inside event handlers is perfectly fine.
