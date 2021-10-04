@@ -1,8 +1,8 @@
 # react-use-svelte-store
 
-I like [Svelte](svelte.dev). You should too. Sometimes, though, I have to use [React](reactjs.com) for legacy projects or because it's what my clients want.
+I like [Svelte](https://svelte.dev). You should too. Sometimes, though, I have to use [React](https://reactjs.com) for legacy projects or because it's what my clients want.
 
-When I do have to use React, I really miss the state management built in with [Svelte](svelte.dev). The stores are beautifully simple and easy to comprehend. Updating them requires no redux action, no complex reducers, no higher order components that feed the component with the content of the stores.
+When I do have to use React, I really miss the state management built in with [Svelte](https://svelte.dev). The stores are beautifully simple and easy to comprehend. Updating them requires no redux action, no complex reducers, no higher order components that feed the component with the content of the stores.
 
 React hooks enable behavior that's _really_ similar to Svelte's reactive assignments. Sharing global state in react _should_ be as easy as importing the state-containing store, and should _not_ require Context providers and consumers, redux reducers, higher order components, or any other such hacks. This package merges the two.
 
