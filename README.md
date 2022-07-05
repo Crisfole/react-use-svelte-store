@@ -28,13 +28,13 @@ The package exports two hooks: `useReadable` and `useWritable`. The hooks are de
 
 #### Signature
 
-```
+```tsx
 function useReadable<T>(store: Readable<T>): T;
 ```
 
 #### Example
 
-```
+```tsx
 import React from 'react';
 import { useReadable } from 'react-use-svelte-store';
 import { foos } from '../state';
@@ -59,13 +59,13 @@ There is no real benefit to `useWritable` over `useReadable` and directly updati
 
 #### Signature
 
-```
+```tsx
 function useWritable<T>(store: Writable<T>): [T, (t: T) => void, (fn: (t: T) => T) => void ];
 ```
 
 #### Example
 
-```
+```tsx
 import React from 'react';
 import { useWritable } from 'react-use-svelte-store';
 import { foos } from '../state';
