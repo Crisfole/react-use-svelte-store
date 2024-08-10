@@ -6,6 +6,9 @@ When I do have to use React, I really miss the state management built in with [S
 
 React hooks enable behavior that's _really_ similar to Svelte's reactive assignments. Sharing global state in react _should_ be as easy as importing the state-containing store, and should _not_ require Context providers and consumers, redux reducers, higher order components, or any other such hacks. This package merges the two.
 
+> [!WARNING]  
+> This repository is old. React 18 and higher have the `useSyncExternalStore` hook which would be a more efficient tool for this. Eventually I will update this repository. Until then, PR's welcome.
+
 ## How do I get started?
 
 I'm assuming you have react installed. If not, well, figuring that out is on you.
